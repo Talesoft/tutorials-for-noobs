@@ -1,4 +1,4 @@
-PHP für Noobs
+HTML für Noobs
 =============
 
 
@@ -15,7 +15,7 @@ Notepad.exe erzeugt beim speichern eine Text-Datei. Wir können keine Bilder, Li
 Speichern wir eine Datei in WordPad, wird nicht etwa eine .txt-Datei erzeugt, sondern eine .rtf-Datei. Hier können wir Bilder hinzufügen, Text fett und kursiv machen und Text-Farben sowie Schriftarten und Schriftgrößen ändern. RTF steht für Rich Text Format. Rich Text ist schon fast etwas wie Hypertext bzw. HTML.
 
 Öffnet man nun eine derartige .rtf-Datei nicht etwa in WordPad, sondern in Notepad, sieht man etwas spannendes:
-```
+```rtf
 {\rtf1\ansi\ansicpg1252\deff0\deflang1031{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
 {\colortbl ;\red255\green0\blue0;}
 {\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa200\sl276\slmult1\cf1\lang7\f0\fs36 Torben is quite awesome!\cf0\fs22\par
@@ -99,7 +99,7 @@ Das `h1` ist der Name des Elementes, im HTML nennt man diese Namen **Tags**. In 
 
 Jede Zahl steht eine tiefere Rangordnung da, heißt, `h1` ist die größte, `h6` die kleinste.
 
-```
+```html
 <h1>Die wichtigsten HTTP-Status Codes</h1>
 
 Hier findet ihr eine Auflistung aller wichtigen HTTP Status-Codes
@@ -128,7 +128,7 @@ Hier greift nämlich der Punkt, den ich oben versucht habe zu erklären: Einem E
 
 Ein **Inline**-Element wie `strong` können wir mitten im Text platzieren, wir müssen nicht die gesamte Zeile hervorheben.
 
-```
+```html
 Hier findet ihr eine Auflistung aller wichtigen <strong>HTTP Status Codes</strong>
 ```
 
@@ -143,14 +143,14 @@ Um dies zu realisieren, baut man einfach 2 Elemente um den Text herum.
 
 Ich nutze hier das Element `em`. Dies steht für `emphasize` und lässig sich am besten in "betonen" übersetzen. Ein Element, dass Text-teile betont also. Äußern tut sich dies in der Regel in kursivem, also schräg-gestelltem Text.
 
-```
+```html
 <strong><em>Hier</em></strong> findet ihr eine Auflistung aller wichtigen <strong>HTTP Status Codes</strong>
 ```
 
 Das `em`-Element landet _in_ unserem `strong` element und in dem `em` Element dann wiederrum unser Text.
 
 Ein öft begangener Fehler ist hier das Vertauschen der End-Tags.
-``` 
+```html
 <strong><em>Hier</strong></em>
 ``` 
 
@@ -161,7 +161,7 @@ wird zwar von vielen Browsern halbwegs korrekt interpretiert, ist aber ein seman
 Viel interessanter wird Verschachtelung allerdings, wenn wir unsere Tabelle realisieren wollen.
 
 Am einfachsten wäre euch nun wahrscheinlich eine Lösung, die so aussieht:
-```
+```html
 <table>
 Code 	Status Text 	Bedeutung
 200		OK				Alles gut.
@@ -184,7 +184,7 @@ Weiterhin gibt es ein Element, was wir anstelle von `td` verwenden können, aber
 
 Hier beginnt der Punkt, an dem HTML Verschachtelung komplex werden kann. Wenn euch nach dem folgenden Text die Augen tränen, seid ihr hier falsch!
 
-```
+```html
 <table>
 	<tr>
 		<th>Code</th>
@@ -224,7 +224,7 @@ Es ist klar, dass _ihr_ euren Code meistens versteht, aber das heißt nicht, das
 
 Haben wir das soweit verinnerlicht, schauen wir uns mal unser gesamtes HTML an:
 
-```
+```html
 <h1>Die wichtigsten HTTP-Status Codes</h1>
 
 <strong><em>Hier</em></strong> findet ihr eine Auflistung aller wichtigen <strong>HTTP Status Codes</strong>
@@ -270,7 +270,7 @@ Nehmen wir als beispiel das `input`-Element. Input steht für Eingabe und erstel
 `input` ist weiterhin eines der wenigen Elemente, die nicht explizit geschlossen werden müssen, heißt, ihr braucht kein `</input>`, um das Element zu schließen. Dies ist der Fall für die Elemente `input`, `br`, `img`, `link`, `area`, `base`, `col`, `command`, `embed`, `hr`, `keygen`, `meta`, `param`, `source`, `track` und `wbr`, einfach für die Vollständigkeit. Ihr müsst euch diese nicht merken und erst mal auch nicht unbedingt wissen, was diese tun.
 
 Schreibt nun ein Input-Element in eure Datei
-```
+```html
 <input>
 ```
 
@@ -283,7 +283,7 @@ Was aber, wenn wir dieses coole Passwort-Feld haben wollen, wo die Zeichen nur a
 
 Dafür modifizieren wir das Element mit einem **Attribut**. Das sieht so aus:
 
-```
+```html
 <input type="password">
 ```
 
@@ -295,7 +295,7 @@ z.B. können wir Formular-Elementen wie `input` auch noch einen Namen geben, dam
 
 Als Beispiel könnten wir zwei Input-Felder für einen Login definieren
 
-``` 
+```html
 <input type="text" name="username">
 <input type="password" name="password">
 ```
@@ -316,7 +316,9 @@ Wir wollen auf andere Seiten verlinken, mit eigenem Inhalt, mit richtig neu lade
 
 Ein Link zu einer anderen Seite könnte z.B. so aussehen
 
-`<a href="ueber-mich.html">Über mich</a>`
+```html
+<a href="ueber-mich.html">Über mich</a>
+```
 
 `href` steht für `Hypertext Reference` und gibt das Ziel unseres Links an.
 
@@ -357,7 +359,7 @@ Würden wir diese Informationen nun einfach in unsere HTML-Datei schreiben, wür
 Deshalb schachtelt man jedes HTML-Dokument in das sogenannte Grundgerüst.
 
 Das Basis-Grundgerüst einer HTML-Datei sieht folgendermaßen aus:
-```
+```html
 <!DOCTYPE html>
 <html lang="de">
 	<head>
@@ -396,7 +398,7 @@ Jeder Text, jedes Element, jeder Link, jede Tabelle, einfach alles, was ihr auf 
 
 
 Verknüpfen wir also nun mal unser HTML oben mit unserem HTML Grundgerüst
-```
+```html
 <!DOCTYPE html>
 <html lang="de">
 	<head>
@@ -441,6 +443,17 @@ Dies ist ein vollständiges, valides HTML-Dokument. So hat eine HTML-Datei auszu
 
 
 Es gibt natürlich noch eine ganze Menge weiterer Elemente, die wir hier nun erklären könnten, aber man scrollt sich jetzt schon zu Tode, also spar ich mir das für ein weiteres Tutorial auf.
+
+Wenn ihr Lesestoff zu HTML haben wollt, bemüht Google:
+- HTML Content Flow (Es wird ein Content Flow für Noobs geben)
+- Inline vs. Block
+- WAI-ARIA (Es wird ein WAI-ARIA für Noobs geben)
+- Semantic Web (Es wird Semantic Web für Noobs geben)
+
+
+Ansonsten [hier eine Liste von W3Schools](http://www.w3schools.com/tags/ref_byfunc.asp), die soweit die meisten Elemente beinhält.
+
+Spielt einfach mal mit den Elementen rum, benutzt sie, ändert die Attribute, probiert rum, schrottet und zerstört, Learning by Doing ist der einzige Weg, ein HTML-Profi zu werden!
 
 
 Good night, good fight!
