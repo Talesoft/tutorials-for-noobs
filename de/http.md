@@ -69,9 +69,9 @@ Wenn du **google.de** in die Adresszeile deines Browsers eingibst und Enter drü
 
 ### Verbindung
 Der Browser sieht, dass du nicht explizit verschlüsseln willst und du keinen Port angegeben hast. Er ändert die angegebene Adresse auf **http://google.de:80** ab und weiß damit:
-	- Wir nutzen **HTTP** als Protokoll
-	- Der Server, den wir abrufen, hat den Namen **google.de**
-	- Der Port, auf den wir verbinden, lautet **80** 
+- Wir nutzen **HTTP** als Protokoll
+- Der Server, den wir abrufen, hat den Namen **google.de**
+- Der Port, auf den wir verbinden, lautet **80** 
 
 
 
@@ -116,7 +116,7 @@ Es ist die Aufgabe des Webservers und der dahinter liegenden Web-Applikation, di
 Um eben dieser Dynamik die Möglichkeit zu geben, seine Anfrage zu spezifizieren, gibt es den sogenannten **Query String** oder auch einfach nur **Query**.
 Das wäre in unserem Beispiel der `q=meine+suche` Part und folgt immer hinter einem `?` im Pfad.
 
-Der Server kann diesen Query String nun verarbeiten und daraus z.B. Optionen oder Variablen bilden (`var q = 'meine suche').
+Der Server kann diesen Query String nun verarbeiten und daraus z.B. Optionen oder Variablen bilden (`var q = 'meine suche'`).
 
 `/search` stellt in diesem Fall bei Google die Suchmaschine selbst dar, mit `?q=meine+suche` übergeben wir unsere Suchanfrage.
 
@@ -125,15 +125,10 @@ Die Suchmaschine nimmt nun unseren `q`-Wert (Der Name ist frei wählbar, Google 
 Hat die Suchmaschine unsere Ergebnisse aus der Datenbank geholt, verschönert sie diese mit etwas HTML und antwortet damit auf unsere Anfrage.
 
 
-Dies wäre ein klassisches Login-Request, das aus einem HTML-Login-Formular stammen könnte.
-
-Der Server setzt den Inhalt des
-
-
 #### HTTP Header
-Am Ende unserer ersten Zeile im Request steht `HTTP/1.1`, was dem Server mitteilt, welche HTTP-Version wir unterstützten, damit dieser die anschließende Übertragung optimieren kann.
+Am Ende unserer ersten Zeile im Request steht `HTTP/1.1`, was dem Server mitteilt, welche HTTP-Version wir unterstützen, damit dieser die anschließende Übertragung optimieren kann.
 
-Darunter folgen die sogenannten HTTP-Header. Wir haben in unserem HTTP-Request genau 2 Header, **Host** und **Connection**.
+Darunter folgen die sogenannten **HTTP-Header** (Kopfdaten). Wir haben in unserem HTTP-Request genau 2 Header, **Host** und **Connection**.
 
 **Host** ist auf `google.de` gesetzt. Bedenkt, dass jedes mal vor der Verbindung der Name `google.de` in die IP-Adresse (`216.58.214.99`) umgewandelt wird. Der Server weiß also quasi gar nicht, welche Website wir genau aufgerufen haben, nur, dass sie sich irgendwo auf seinem Server befindet. Der Host-Header teilt dem Server noch mal explizit mit, um welche Website es sich handelt.
 
@@ -142,7 +137,7 @@ Darunter folgen die sogenannten HTTP-Header. Wir haben in unserem HTTP-Request g
 
 ### Die Response (Rückgabe)
 
-Hat der Server seine Antwort gefunden, schickt er sie in einem bestimmten Format wieder zurück. Dieses enhält Informationen darüber, um was für eine Art response es sich handelt (z.B. Dateityp, Dateigröße) und die Response selbst.
+Hat der Server seine Antwort gefunden, schickt er sie in einem bestimmten Format wieder zurück. Dieses enhält Informationen darüber, um was für eine Art Daten es sich handelt, die wir da angefragt haben (z.B. Dateityp, Dateigröße) und die Daten selbst.
 
 
 Haben wir nun unser GET-Request übermittelt, könnte eine Response von Google folgendermaßen aussehen:
@@ -174,7 +169,7 @@ Hier mal eine kleine Liste von Status-Codes, die ihr öfter sehen werdet:
 
 Nach dem Status Code folgen wieder einige HTTP-Header, diese sind hier **Content-Type** und **Content-Length**.
 
-**Content-Type** beschreibt den Inhaltstypen. Der erste Wert `text/html` ist ein sogenannter **MIME-Type** und stammen aus der E-Mail Entwicklung. Der zweite Teil `encoding=utf-8` sagt, dass unsere Daten unten mit dem UTF-8 Charset enkodiert sind und wir dieses auch nutzen sollten, damit uns die Sonderzeichen korrekt angezeigt werden (z.B. ä, ü, ö, ß)
+**Content-Type** beschreibt den Inhaltstypen. Der erste Wert `text/html` ist ein sogenannter **MIME-Type** und stammen aus der E-Mail Welt. Es gibt hunderte verschiedene MIME-Types, die alle jeweils einen anderen Dateitypen beschreiben. Der zweite Teil `encoding=utf-8` sagt, dass unsere Daten unten mit dem UTF-8 Charset enkodiert sind und wir dieses auch nutzen sollten, damit uns die Sonderzeichen korrekt angezeigt werden (z.B. ä, ü, ö, ß)
 
 **Content-Length** beschreibt die Länge unseres Körpers der Nachricht, dem sogenannten **Body**. Hier sind es wohl 103446 Byte an Daten, die uns zugesandt wurden.
 
@@ -194,7 +189,7 @@ Gängige MIME-Types sind z.B. folgende:
 - **image/gif** wäre ein GIF-Bild
 - **application/json** wäre eine Sammlung aus JSON-Daten, dazu mehr in JSON für Noobs
 - **application/octet-stream** wäre z.B. ein klassischer Datei-Download einer beliebigen Datei 
-- **x-www-form/urlencoded* ist das klassische Formular-Übertragungsformat und beinhält einen Query-String
+- **x-www-form/urlencoded** ist das klassische Formular-Übertragungsformat und beinhält einen Query-String mit unseren Formular-Daten
 - **multipart/form-data** wird benötigt, um größere Datei-Uploads auf Websites durchzuführen, da die Requests damit in mehrere Teile geteilt und einzeln übertragen werden.
 
 
@@ -211,6 +206,9 @@ Connection: keep-alive
 username=torben&password=mypassword123
 ```
 
+
+Dies wäre ein klassisches Login-Request, das aus einem HTML-Login-Formular stammen könnte.
+
 Hier schicken wir Daten an unseren Webserver, nämlich einen Query-String, der einen Benutzernamen `username` mit dem Wert `torben` und ein Passwort `password` mit dem Wert `mypassword123` enthält. Der Server kann diese Daten verarbeiten und z.B. prüfen, ob die Login-Daten korrekt sind und dann entsprechend antworten.
 
 Durch POST-Requests werden jegliche Art von Formular-Kommunikation im Web realisiert.
@@ -218,7 +216,7 @@ Durch POST-Requests werden jegliche Art von Formular-Kommunikation im Web realis
 
 ## Fazit
 
-Rufen wir also eine Website auf, wird erst mal ein HTTP Request gemacht. Beim aufbauen der Seite finden sich z.B. Bilder, JavaScripts, StyleSheets, Videos etc., die ebenfalls geladen werden müssen. Für jedes Element wird ein neues HTTP Request an den Server gesendet und der Server antwortet mit der Response und dem entsprechenden Inhalt.
+Rufen wir also eine Website auf, wird erst mal ein HTTP Request gemacht. Beim Aufbau der Seite finden sich z.B. Bilder, JavaScripts, StyleSheets, Videos etc., die ebenfalls geladen werden müssen. Für jedes Element wird ein neues HTTP Request an den Server gesendet und der Server antwortet mit der Response und dem entsprechenden Inhalt.
 
 Nach ein paar Requests hat man dann in der Regel eine vollständige Website, die man im Browser darstellen kann.
 
