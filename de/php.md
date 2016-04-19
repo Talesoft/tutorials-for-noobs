@@ -989,7 +989,6 @@ Hier verknüpfen wir einfach den Wert der Konstanten `__DIR__` (Wird in diesem F
 
 
 #### Der Vorteil
-
 Warum wir das Ganze hier alles gemacht haben zeige ich euch jetzt.
 
 Wir sollen nun also eine weitere Seite, die "About us"-Seite einpflegen. Wir kopieren also den Inhalt unserer `index.php` und ändern lediglich den Content ab.
@@ -1073,7 +1072,6 @@ Ziemlich cool, oder?
 
 
 # Das Ende
-
 Das reicht.
 
 Wir sind bei über 1000 Zeilen Markdown, ich kann alleine mit Basics wahrscheinlich noch 5000 weitere füllen, also belasse ich es dabei und lasse euch rumspielen.
@@ -1085,7 +1083,6 @@ Für alle anderen Themen gibt es spezifische * for Noobs-Tutorials, die ihr euch
 
 
 # Who won, who's next?
-
 Wenn euch dieses Tutorial gefallen hat: Mein Beileid!
 
 Ich bedanke mich für die Aufmerksamkeit und hoffe, ich konnte einige Aspekte der PHP Programmierung erläutern, wenn auch nur wenige.
