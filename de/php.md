@@ -1090,6 +1090,7 @@ Wenn euch dieses Tutorial gefallen hat: Mein Beileid!
 
 Ich bedanke mich für die Aufmerksamkeit und hoffe, ich konnte einige Aspekte der PHP Programmierung erläutern, wenn auch nur wenige.
 
+Möchtet ihr mehr Tutorials sehen, habt ihr Fragen, Kritik und/oder Anregungen, habt ihr einen Fehler gefunden oder seid ihr auf der Suche nach der großen Liebe, [spendiert mir einen Kaffee](https://www.paypal.me/TorbenKoehn) und/oder [schreibt mir eine E-Mail](mailto:tk@talesoft.io).
 
 
 
