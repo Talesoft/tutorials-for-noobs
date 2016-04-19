@@ -109,6 +109,7 @@ Ein Byte besteht aus 8 Bit und bildet eine der wichtigen Recheneinheiten in Comp
 Ein Bit ist ein Zustand oder Schalter, der entweder 1 (An) oder 0 (Aus) beträgt.
 
 **Unsigned Byte**: Kein Vorzeichen, 8 Bit lang, `256` mögliche Werte, Zahl zwischen `0` (`0000 0000`) und `255` (`1111 1111`)
+
 **Signed Byte**: Vorzeichen, 8 Bit lang, `256` mögliche Werte, Zahl zwischen `-128` (`0111 1111`) und `127` (`1111 1111`)
 
 **Was ist Unsigned und Signed?**
@@ -116,6 +117,7 @@ Ein Bit ist ein Zustand oder Schalter, der entweder 1 (An) oder 0 (Aus) beträgt
 Als Sign wird generall das Vorzeichen bezeichnet, also entweder `+` (oder kein Vorzeichen) oder `-` um zu definieren, ob die Zahl positiv oder negativ ist.
 
 **Unsigned** bedeutet, dass es kein Vorzeichen gibt. Die Zahl ist immer positiv und kann nur positive Werte fassen.
+
 **Signed** bedeutet, dass es ein Vorzeichen gibt. Die Zahl kann sowohl negativ als auch positiv sein.
 
 
@@ -215,6 +217,7 @@ Ein Integer setzt sich aus 4 Byte (32 Bit) zusammen. Die Bits der Bytes werden i
 Einen Integer kürzt man als **int** ab.
 
 **Unsigned Integer**: Kein Vorzeichen, 32 Bit lang, `4.294.967.296` mögliche Werte, Zahl zwischen `0` (`0000 0000 0000 0000 0000 0000 0000 0000`) und `4.294.967.295` (`1111 1111 1111 1111 1111 1111 1111 1111`)
+
 **Signed Byte**: Vorzeichen, 32 Bit lang, `4.294.967.296` mögliche Werte, Zahl zwischen `-2.147.483.648` (`0111 1111 1111 1111 1111 1111 1111 1111`) und `2.147.483.647` (`1111 1111 1111 1111 1111 1111 1111 1111`)
 
 #### Fun-Fact für zwischendurch:
@@ -349,6 +352,13 @@ Dann prüfen wir, ob die Differenz unter unserer Toleranz liegt. Tut sie es, las
 
 Nun haben wir zumindest einen kleinen Einblick in die Welt der Floats erhalten. Eine spannende, nervenauftreibende, teilweise jemanden zur Weißglut treibende Geschichte von Menschen, die versuchen, die Naturgesetze zu überlisten.
 
+#### Fazit
+**Was ist ein Float?**
+
+Ein Float-Wert stellt eine Gleitkommazahl dar. Die Größe des Datentyps und die Verarbeitung ist stark abhängig von Plattform und Architektur und unterscheidet sich enorm.
+
+Einen Floating Point Number Wert kürzt man als **float** ab.
+
 
 ---
 
@@ -453,6 +463,8 @@ Steht das erste Bit auf `1`, kommt ein weiteres Byte und ein weiterer Bit im ers
 
 Wir können also mit UTF-8 statt **255** verschiedenen Zeichen auf einmal **1.114.112** verschiedene Zeichen darstellen. Toll, oder nicht?
 
+[Hier](http://unicode-table.com/de/) könnt ihr euch sämtliche Zeichen anschauen. Scrollt etwas und ihr seht die Buchstaben und Zeichen der einzelnen Nationalitäten unserer Welt.
+
 Für unsere chinesischen Schulkinder ist damit gesorgt!
 
 Wir haben also gesehen, wie sich so ein String verhält, wie er gespeichert wird und wie ein Computer ihn handhabt.
@@ -463,6 +475,16 @@ Weiterhin werdet ihr viele Probleme mit Zeichenkodierungen vermeiden, wenn ihr v
 
 Die Tatsache, dass UTF-8 funktioniert, lässt sich daran erkennen, dass die Sonderzeichen in diesem Text korrekt dargestellt werden. Denn sowohl GitHub als auch meine Markdown-Datei hier sind mit UTF-8 kodiert.
 
+#### Fazit
+**Was ist ein String?**
+
+Ein String beschreibt eine Verkettung von Bytes im Arbeitsspeicher, die durch einen **Null-Terminator** beendet wird.
+
+Die Verkettung kann durch einen Zeichensatz (Charset) in einen Text umgewandelt werden.
+
+Das Charset bestimmt die Zeichen, die anhand der einzelnen Bytes im String dargestellt werden.
+
+**Bitte immer UTF-8 nutzen. Egal wann. Egal wo. Egal unter welchen Umständen.**
 
 ---
 
